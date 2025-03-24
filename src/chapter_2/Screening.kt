@@ -23,7 +23,7 @@ class Screening(
         return Reservation(customer, this, calculateFee(audienceCount), audienceCount)
     }
 
-    private fun calculateFee(audienceCount: Int): Int {
-        return movie.calculateMovieFee(this).times(audienceCount)
+    private fun calculateFee(audienceCount: Int): Money {
+        return movie.calculateMovieFee(this).times(audienceCount.toDouble())
     }
 }
